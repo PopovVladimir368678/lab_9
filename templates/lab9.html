@@ -1,0 +1,29 @@
+<!doctype html>
+<title>Портфолио разроботчика</title>
+<body background="https://planetofhotels.com/guide/sites/default/files/styles/paragraph__hero_banner__hb_image__1880bp/public/hero_banner/the-Newberry.jpg">
+    <h1 style="color: white;">Портфолио разроботчика</h1>
+
+    <h2 style="color: white;">На этой странице вы можете посмотреть список проектов разработчика</h2>
+
+    <form action="/find" method="post">
+        <input type="text" name="title" placeholder="Title">
+        <input type="tel" name="link" placeholder="Link">
+        <button type="submit">Искать</button>
+    </form>
+    <h3 style="color: white;">Введите название проекта и получите ссылку (например "lab_8" ), по ссылке вы сможете найти название</h3>
+
+    <form action="/add" method="post">
+        <input type="text" name="title" placeholder="Title">
+        <input type="tel" name="link" placeholder="Link">
+        <button type="submit">Добавить</button>
+    </form>
+    <h3 style="color: white;">Тут вы можете добавить новый проект.
+        Для этого введите название и ссылку</h3>
+
+    {% if entities %}
+        {% for entity in entities %}
+            <p style="color: red;">{{ entity.title }} {{ entity.link }}</p>
+        {% endfor %}
+    {% endif %}
+</body>
+
